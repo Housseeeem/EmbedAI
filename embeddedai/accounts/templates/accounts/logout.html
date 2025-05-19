@@ -1,0 +1,19 @@
+<!-- templates/registration/logged_out.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged Out - EmbeddedAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center" style="height: 100vh;">
+
+    <div class="card shadow-lg text-center" style="width: 400px;">
+        <div class="card-body">
+            <h2 class="card-title mb-4">You have been logged out</h2>
+            <a href="{% url 'login' %}" class="btn btn-primary">Login again</a>
+        </div>
+    </div>
+
+</body>
+</html>
