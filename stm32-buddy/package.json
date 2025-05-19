@@ -1,0 +1,149 @@
+{
+  "name": "stm32-buddy",
+  "displayName": "STM32 Buddy",
+  "description": "Assistant STM32 pour VS Code avec chatbot, autocomplétion IA et génération de commentaires C. Intègre génération de code via modèle T5.",
+  "version": "0.0.1",
+  "publisher": "your-name-or-org",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages",
+    "AI"
+  ],
+  "icon": "images/icon.png",
+  "keywords": [
+    "stm32",
+    "chatbot",
+    "autocomplete",
+    "autocompletion",
+    "C",
+    "comment",
+    "ai",
+    "fastapi",
+    "buddy",
+    "t5",
+    "code-generator"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:c",
+    "onCommand:stm32-buddy.openChatbot",
+    "onCommand:commentgen.explainFunction",
+    "onCommand:t5-code-generator.helloWorld",
+    "onCommand:t5-code-generator.generateCode",
+    "onCommand:t5-code-generator.generateTestCode"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "c",
+        "aliases": ["C"],
+        "extensions": [".c"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "bugDetector.errorType",
+        "title": "Detect the error type"
+      },
+      {
+        "command": "bugDetector.lineByLine",
+        "title": "Line by line analysis"
+      },
+      {
+        "command": "bugDetector.detectBug",
+        "title": "Check Code for Bugs"
+      },
+      {
+        "command": "stm32-buddy.openChatbot",
+        "title": "Open STM32 Buddy Chatbot"
+      },
+      {
+        "command": "commentgen.explainFunction",
+        "title": "Generate a comment for the function"
+      },
+      {
+        "command": "t5-code-generator.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "t5-code-generator.generateCode",
+        "title": "T5: Generate Code from Prompt"
+      },
+      {
+      "command": "t5-code-generator.generateTestCode",
+      "title": "Generate STM32 Test Code"
+    }
+    ],
+    "keybindings": [
+      {
+        "command": "commentgen.explainFunction",
+        "key": "ctrl+alt+c",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "bugDetector.errorType",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "bugDetector.lineByLine",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "bugDetector.detectBug",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "commentgen.explainFunction",
+          "when": "editorHasSelection && editorLangId == c",
+          "group": "navigation"
+        },
+        {
+          "command": "t5-code-generator.generateCode",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "esbuild": "^0.25.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "axios": "^1.9.0"
+  }
+}
