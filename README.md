@@ -37,4 +37,27 @@ The VS Code extension brings intelligent development features directly into the 
 -  **Automatic unit test generation**: STM32-specific unit tests are created automatically to save development time.
 -  **Bug detection with detailed feedback**: The system identifies bugs and highlights the error type and line for easier debugging.
 -  **Integrated STM32 chatbot**: An embedded chatbot answers technical questions related to STM32, providing immediate developer support.
+## 🛠 Tech Stack
+
+**Frontend (Web App):**
+- HTML
+- CSS
+
+**Backend:**
+- FastAPI (Python)
+- Clang (for STM32 code analysis)
+
+**AI/ML Models:**
+- T5 (for comment generation)
+- Bidirectional LSTM (for bug detection and analysis)
+- MLP (for classification tasks)
+
+**VS Code Extension:**
+- Visual Studio Code
+- TypeScript
+
+**Tools:**
+- Git & GitHub
+- Visual Studio Code
+
 
