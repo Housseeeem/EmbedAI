@@ -1,4 +1,9 @@
-# EmbedAI
-##Overview An academic project that facilitates development and testing.
+## Overview
 
-Our solution is a smart platform designed to assist developers in writing, analyzing, and improving STM32 code. It includes two main components: a web application and a Visual Studio Code (VS Code) extension, each tailored to enhance different stages of the development workflow.
+**EmbedAI** is an academic project that facilitates the development and testing of STM32 code.
+
+Our solution is a smart platform designed to assist developers in writing, analyzing, and improving STM32 code. It consists of two main components:
+
+- A **web application** that supports intelligent code analysis and learning tools.
+- A **Visual Studio Code (VS Code) extension** tailored to enhance different stages of the STM32 development workflow.
+.
