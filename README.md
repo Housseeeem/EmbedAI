@@ -42,6 +42,9 @@ The VS Code extension brings intelligent development features directly into the 
 **Frontend (Web App):**
 - HTML
 - CSS
+- js
+- jQuery
+- AJAX 
 
 **Backend:**
 - FastAPI (Python)
