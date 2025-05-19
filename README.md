@@ -49,6 +49,7 @@ The VS Code extension brings intelligent development features directly into the 
 **Backend:**
 - FastAPI (Python)
 - Clang (for STM32 code analysis)
+- clang Tidy
 
 **AI/ML Models:**
 - T5 (for comment generation)
